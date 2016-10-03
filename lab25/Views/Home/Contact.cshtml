@@ -1,17 +1,22 @@
-﻿@{
-    ViewBag.Title = "Contact";
+﻿@model lab25.Models.UserInfo
+
+
+@{
+    using (Html.BeginForm())
+    {
+        <body style="background-color:mediumturquoise">
+            <h3 style="color:whitesmoke; font-family:'French Script MT'; font-size:xx-large ">@ViewBag.Message</h3>
+            <h4 style="color:red">@ViewBag.InvMessage</h4>
+
+            <div>
+                <div style="color:darkgoldenrod">
+                    @Html.ValidationSummary()
+                </div>
+                <p>Your name: @Html.TextBoxFor(x => x.Name)</p>
+                <p>Your age: @Html.TextBoxFor(x => x.Age)</p>
+            </div>
+            <input style="color:firebrick" type="submit" value="Check Validation" />
+        </body>
+    }
+
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
